@@ -21,13 +21,7 @@ app.use(
 );
 app.use(express.json());
 
-mongoose
-  .connect(process.env.DATABASE_URL)
-  .then(() => {
-    console.log("Mongo DB connected");
-    app.listen(8080, () => console.log("Server started on http://localhost:8080"));
-  })
-  .catch((error) => console.log(error));
+mongoose.connect(process.env.DATABASE_URL);
 
 app.get("/", (req, res) => {
   res.send("hello world");
