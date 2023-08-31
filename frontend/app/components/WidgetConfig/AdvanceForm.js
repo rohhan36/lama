@@ -87,7 +87,7 @@ const AdvanceForm = () => {
       return;
     }
     axios
-      .put(`http://localhost:8080/advanceconfigs/${options._id}`, { ...formData })
+      .patch(`http://localhost:8080/advanceconfigs/${options._id}`, { ...formData })
       .then(() => {
         toast.success("Configurations updated ");
       })
