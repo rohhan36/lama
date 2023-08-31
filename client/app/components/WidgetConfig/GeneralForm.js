@@ -16,7 +16,7 @@ const GeneralForm = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/generalconfigs", {
+      .get("https://lamabackend.onrender.com/generalconfigs", {
         params: {
           projectId: currentProjectId,
         },
@@ -58,7 +58,7 @@ const GeneralForm = () => {
     };
     if (!options) {
       axios
-        .post("http://localhost:8080/generalconfigs", { ...formData })
+        .post("https://lamabackend.onrender.com/generalconfigs", { ...formData })
         .then((response) => {
           toast.success("Configurations updated");
         })
@@ -70,7 +70,7 @@ const GeneralForm = () => {
     }
 
     axios
-      .patch(`http://localhost:8080/generalconfigs/${options._id}`, { ...formData })
+      .patch(`https://lamabackend.onrender.com/generalconfigs/${options._id}`, { ...formData })
       .then(() => {
         toast.success("Configurations updated");
       })

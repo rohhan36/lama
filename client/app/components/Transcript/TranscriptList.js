@@ -12,7 +12,7 @@ const TranscriptList = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/transcripts", {
+      .get("https://lamabackend.onrender.com/transcripts", {
         params: { projectId: currentProjectId },
       })
       .then((response) => {

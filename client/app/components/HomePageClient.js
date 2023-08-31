@@ -20,7 +20,7 @@ const HomePageClient = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/projects", {
+      .get("https://lamabackend.onrender.com/projects", {
         params: { email: currentUser },
       })
       .then((response) => {

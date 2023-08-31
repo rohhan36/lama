@@ -27,7 +27,7 @@ const NewProjectModal = () => {
 
     console.log(currentUser);
     axios
-      .post("http://localhost:8080/projects", {
+      .post("https://lamabackend.onrender.com/projects", {
         name: projectName,
         projectList: [],
         email: currentUser,

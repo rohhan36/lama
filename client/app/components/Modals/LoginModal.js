@@ -29,12 +29,12 @@ const LoginModal = () => {
     }
 
     axios
-      .get(`http://localhost:8080/users/${email}`)
+      .get(`https://lamabackend.onrender.com/users/${email}`)
       .then((response) => {
         const user = response.data;
         if (!user[0]) {
           axios
-            .post("http://localhost:8080/users", {
+            .post("https://lamabackend.onrender.com/users", {
               email,
               projects: [],
             })

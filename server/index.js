@@ -9,19 +9,17 @@ const User = require("./models/userModel");
 const Transcripts = require("./models/transcriptModel");
 const GeneralConfig = require("./models/generalConfigModel");
 const AdvanceConfig = require("./models/advanceConfigModel");
-
+const PORT = process.env.PORT || 8080;
 const app = express();
 
-app.use(
-  cors({
-    origin: ["https://lama-api-rohhan36.vercel.app/"],
-    methods: ["POST", "GET"],
-    credentials: true,
-  })
-);
+app.use(cors());
 app.use(express.json());
 
 mongoose.connect(process.env.DATABASE_URL);
+
+app.listen(PORT, () => {
+  console.log(`Server started on port no ${PORT}`);
+});
 
 app.get("/", (req, res) => {
   res.json("hello world");

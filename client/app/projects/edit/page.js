@@ -25,7 +25,7 @@ const EditPage = () => {
     }
 
     axios
-      .patch(`http://localhost:8080/transcripts/${currentTranscript._id}`, {
+      .patch(`https://lamabackend.onrender.com/transcripts/${currentTranscript._id}`, {
         name: transcriptName,
         description: transcript,
       })

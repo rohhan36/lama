@@ -36,7 +36,7 @@ const UploadForm = () => {
     }
 
     axios
-      .post("http://localhost:8080/transcripts", {
+      .post("https://lamabackend.onrender.com/transcripts", {
         name: transcriptName,
         description: transcript,
         projectId: currentProject._id,

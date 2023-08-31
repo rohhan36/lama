@@ -27,7 +27,7 @@ const AdvanceForm = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/advanceconfigs", {
+      .get("https://lamabackend.onrender.com/advanceconfigs", {
         params: {
           projectId: currentProjectId,
         },
@@ -75,7 +75,7 @@ const AdvanceForm = () => {
     };
     if (!options) {
       axios
-        .post("http://localhost:8080/advanceconfigs", { ...formData })
+        .post("https://lamabackend.onrender.com/advanceconfigs", { ...formData })
         .then(() => {
           toast.success("Configurations updated ");
         })
@@ -86,7 +86,7 @@ const AdvanceForm = () => {
       return;
     }
     axios
-      .patch(`http://localhost:8080/advanceconfigs/${options._id}`, { ...formData })
+      .patch(`https://lamabackend.onrender.com/advanceconfigs/${options._id}`, { ...formData })
       .then(() => {
         toast.success("Configurations updated ");
       })

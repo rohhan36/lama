@@ -39,7 +39,7 @@ const TranscriptItem = ({ transcriptData }) => {
 
   const deleteHandler = () => {
     axios
-      .delete(`http://localhost:8080/transcripts/${_id}`)
+      .delete(`https://lamabackend.onrender.com/transcripts/${_id}`)
       .then((response) => {
         toast.success("Deleted Successfully");
         location.reload();
