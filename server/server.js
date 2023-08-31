@@ -24,7 +24,7 @@ app.use(express.json());
 mongoose.connect(process.env.DATABASE_URL);
 
 app.get("/", (req, res) => {
-  res.send("hello world");
+  res.json("hello world");
 });
 
 //get all projects bu user email
