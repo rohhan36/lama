@@ -33,7 +33,6 @@ const AdvanceForm = () => {
         },
       })
       .then((response) => {
-        console.log(response.data);
         setOptions(response.data[0]);
         setPrimaryColor(response.data[0].primaryColor);
         setFontColor(response.data[0].fontColor);
@@ -87,7 +86,7 @@ const AdvanceForm = () => {
       return;
     }
     axios
-      .put(`http://localhost:8080/advanceconfigs/${options._id}`, { ...formData })
+      .patch(`http://localhost:8080/advanceconfigs/${options._id}`, { ...formData })
       .then(() => {
         toast.success("Configurations updated ");
       })
