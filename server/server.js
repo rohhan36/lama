@@ -68,7 +68,7 @@ app.put("/projects/:id", async (req, res) => {
 
     //we coulud not find the product with given ID
     if (!product) {
-      return res.status(404).json({ message: `Could not find product with ID ${id}` });
+      return res.status(404).json({ message: `Could not find project with ID ${id}` });
     }
     const updatedProject = await Projects.findById(id);
 
@@ -86,7 +86,7 @@ app.delete("/projects/:id", async (req, res) => {
     const product = await Projects.findByIdAndDelete(id);
 
     if (!product) {
-      return res.status(404).json({ message: `Could not find product with ID ${id}` });
+      return res.status(404).json({ message: `Could not find project with ID ${id}` });
     }
 
     res.status(200).json({ message: "Successfully deleted" });
